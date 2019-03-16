@@ -1,0 +1,66 @@
+http://www.2cto.com/kf/201312/262036.html
+
+1. JAVA 的流 从 大的类型上分成 阻塞型IO Java.io
+                                                      非阻塞型IO Java.nio
+
+
+  java.io包下面有大量的类跟接口，可以分成3类
+                                                                                              流部分(IO的主体)
+                                                                                              非流部分(辅助流部分的类 ：File, RandomAccessFile 等)
+                                                                                              文件读取部分的与安全相关的及本地文件系统类(SerializablePermission,FileSystem等)
+                                                                                              
+       根据处理数据类型的不同 ,我们将流分成 
+ 							  Reader 
+                                                                         字符流
+                              Writer    
+                              
+                              InputStream                                       
+                                                                         字节流
+                              OutPutStream
+                                                                         
+ 1.1 字符流                                                                                              
+    Java 的字符 (Char) 是Unicode编码，占用 2 个字节。
+            为什么有字符流？因为数据编码的不同，从而有了对字符进行高效操作的流对象。本质其实就是基于字节流读取时，去查了指定的码表
+            字符流以字符为单位，根据码表映射字符，一次可能读多个字节，字符流只能处理字符类型的数据，
+
+ 1.2 字节流
+            字节流以字节（8bit）为单位，字节流能处理所有类型的数据（如图片、avi等）。
+ 1.3 区别：
+            字节流在操作的时候本身是不会用到缓冲区的，是文件本身的直接操作的；而字符流在操作的时候是会用到缓冲区的，是通过缓冲区来操作文件.
+            优先选用字节流。首先因为硬盘上的所有文件都是以字节的形式进行传输或者保存的，包括图片等内容。但是字符只是在内存中才会形成的.
+            
+2. java.io.InputStream
+	java.lang.Object
+	      继承者 java.io.InputStream
+	所有已实现的接口： 
+		Closeable 
+	直接已知子类： 
+	ByteArrayInputStream, FileInputStream, StringBufferInputStream （三种基本的介质流）
+	AudioInputStream, FilterInputStream, InputStream, ObjectInputStream,
+	PipedInputStream, SequenceInputStream等
+
+   InputStream 是所有输入字节流的父类。
+
+
+InputStreamReader:字节到字符的桥梁
+OutputStreamWriter:字符到字节的桥梁
+
+缓冲流  BufferInputStream / BufferOutputStream / BufferReader / BufferWriter 有一个特有的方法：readLine()；一次读一行
+
+数据流（DataInputStream/DataOutputStream）
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

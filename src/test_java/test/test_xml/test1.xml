@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<School>
+	<Student>
+		<Name>沈浪</Name>
+		<Num>1006010022</Num>
+		<Classes>信管2</Classes>
+		<Address>浙江杭州3</Address>
+		<Tel>123456</Tel>
+	</Student>
+	<test>
+		<da>da</da>
+	</test>
+	<test>
+		<da>da</da>
+	</test>
+</School>
