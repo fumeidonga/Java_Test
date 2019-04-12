@@ -10,11 +10,16 @@ import java.util.function.Predicate;
 public class RoboContactLambda {
 	public void phoneContacts(List<Person> pl, Predicate<Person> pred) {
 		System.out.println(pred);
-		for (Person p : pl) {
+//		for (Person p : pl) {
+//			if (pred.test(p)) {
+//				roboCall(p);
+//			}
+//		}
+		
+		pl.forEach((p) -> {
 			if (pred.test(p)) {
 				roboCall(p);
-			}
-		}
+			}});
 	}
 
 	public void emailContacts(List<Person> pl, Predicate<Person> pred) {
